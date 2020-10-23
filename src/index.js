@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from "react-redux"
 import * as serviceWorker from './serviceWorker';
 import { store } from "./redux/storeConfig/store"
-import { Layout } from "./utility/context/Layout"
 import Spinner from "./components/@vuexy/spinner/Fallback-spinner"
-import { IntlProviderWrapper } from "./utility/context/Internationalization"
+import { Layout } from "./utility/Layout"
+import { IntlProviderWrapper } from "./utility/Internationalization"
 
 import "./index.scss"
 
