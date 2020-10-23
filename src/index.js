@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Provider } from "react-redux"
 import * as serviceWorker from './serviceWorker';
+import { store } from "./redux/storeConfig/store"
+import { Layout } from "./utility/context/Layout"
+import Spinner from "./components/@vuexy/spinner/Fallback-spinner"
+import { IntlProviderWrapper } from "./utility/context/Internationalization"
+
+import "./index.scss"
+
+const LazyApp = lazy(() => import("./App"))
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Suspense fallback={<Spinner />}>
+        <Layout>
+          <IntlProviderWrapper>
+            <LazyApp />
+          </IntlProviderWrapper>
+        </Layout>
+      </Suspense>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
