@@ -1,27 +1,48 @@
 import React from "react"
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  Table,
-  UncontrolledTooltip,
-  Progress
-} from "reactstrap"
-import avatar1 from "../../../assets/img/portrait/small/avatar-s-5.jpg"
-import avatar2 from "../../../assets/img/portrait/small/avatar-s-7.jpg"
-import avatar3 from "../../../assets/img/portrait/small/avatar-s-10.jpg"
-import avatar4 from "../../../assets/img/portrait/small/avatar-s-8.jpg"
-import avatar5 from "../../../assets/img/portrait/small/avatar-s-1.jpg"
-import avatar6 from "../../../assets/img/portrait/small/avatar-s-2.jpg"
-import avatar7 from "../../../assets/img/portrait/small/avatar-s-3.jpg"
-import avatar8 from "../../../assets/img/portrait/small/avatar-s-4.jpg"
+import axios from "axios"
+import {Card, CardHeader, CardTitle, Table, UncontrolledTooltip, Progress} from "reactstrap"
 
-class DispatchedOrders extends React.Component {
+import avatar1 from "../../assets/img/portrait/small/avatar-s-5.jpg"
+import avatar2 from "../../assets/img/portrait/small/avatar-s-7.jpg"
+import avatar3 from "../../assets/img/portrait/small/avatar-s-10.jpg"
+import avatar4 from "../../assets/img/portrait/small/avatar-s-8.jpg"
+import avatar5 from "../../assets/img/portrait/small/avatar-s-1.jpg"
+import avatar6 from "../../assets/img/portrait/small/avatar-s-2.jpg"
+import avatar7 from "../../assets/img/portrait/small/avatar-s-3.jpg"
+import avatar8 from "../../assets/img/portrait/small/avatar-s-4.jpg"
+
+class DomainLists extends React.Component {
+  state = {
+    domainLists: [],
+    isLoading: true,
+    errors: null
+  };
+
+  // Now we're going to make a request for data using axios
+  getDomain() {
+    axios
+      .get("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/posts.json")
+      // Once we get a response and store data, let's change the loading state
+      .then(response => {
+        this.setState({
+          domainLists: response.data.posts,
+          isLoading: false
+        });
+      })
+      // If we catch any errors connecting, let's update accordingly
+      .catch(error => this.setState({ error, isLoading: false }));
+  }
+
+  componentDidMount() {
+    this.getDomain();
+  }
+
   render() {
+    const { isLoading, domainLists } = this.state;
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Dispatched Orders</CardTitle>
+          <CardTitle>Domain Listing</CardTitle>
         </CardHeader>
         <Table
           responsive
@@ -29,13 +50,15 @@ class DispatchedOrders extends React.Component {
         >
           <thead>
             <tr>
-              <th>ORDER</th>
-              <th>STATUS</th>
-              <th>OPERATORS</th>
-              <th>LOCATION</th>
-              <th>DISTANCE</th>
-              <th>START DATE</th>
-              <th>EST DEL. DT</th>
+              <th>Domain Name</th>
+              <th>Company ID</th>
+              <th>Active Vehicle</th>
+              <th>Billing Vehicle</th>
+              <th>Total Vehicle</th>
+              <th>Geotask Employee</th>
+              <th>GeoRoster Employee</th>
+              <th>GeoFleet Dispatch</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -321,4 +344,4 @@ class DispatchedOrders extends React.Component {
     )
   }
 }
-export default DispatchedOrders
+export default DomainLists

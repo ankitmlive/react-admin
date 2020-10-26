@@ -8,7 +8,7 @@ import Spinner from "../components/@vuexy/spinner/Loading-spinner"
 // import all components
 //const register = lazy(() => import("../views/pages/auth/register/Register"))
 const Login = lazy(() => import("../views/pages/auth/login/Login"))
-const Dashboard = lazy(() =>import("../views/dashboard/analytics/AnalyticsDashboard"))
+const Dashboard = lazy(() =>import("../views/dashboard/Dashboard"))
 
 // Set Layout and Component Using App Route
 const RouteConfig = ({ component: Component, fullLayout, ...rest }) => (

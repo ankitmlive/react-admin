@@ -10,7 +10,7 @@ import { Row, Col } from "reactstrap"
 // import ActivityTimeline from "./ActivityTimeline"
 // import DispatchedOrders from "./DispatchedOrders"
 import DomainLists from "./DomainList"
-import "../../../assets/scss/pages/dashboard-analytics.scss"
+import "../../assets/scss/pages/dashboard-analytics.scss"
 
 // let $primary = "#7367F0",
 //   $danger = "#EA5455",
@@ -24,7 +24,7 @@ import "../../../assets/scss/pages/dashboard-analytics.scss"
 //   $label_color = "#e7eef7",
 //   $white = "#fff"
 
-class AnalyticsDashboard extends React.Component {
+class Dashboard extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -38,4 +38,4 @@ class AnalyticsDashboard extends React.Component {
   }
 }
 
-export default AnalyticsDashboard
+export default Dashboard
