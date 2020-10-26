@@ -5,6 +5,7 @@ import classnames from "classnames"
 import { history } from "../../../history"
 import PerfectScrollbar from "react-perfect-scrollbar"
 import { AlertTriangle } from "react-feather"
+
 class Autocomplete extends React.Component {
   constructor(props) {
     super(props)
@@ -290,7 +291,8 @@ class Autocomplete extends React.Component {
 
   // Closes Suggestions if clicked outside container (On Blur Basically)
   handleExtenalClick = e => {
-    let { container } = this.refs
+    //let { container } = this.refs
+    let { container } = React.createRef();
     const { target } = e
     if (target !== container && !container.contains(target)) {
       this.setState({

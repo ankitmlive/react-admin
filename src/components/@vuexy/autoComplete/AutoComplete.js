@@ -9,6 +9,7 @@ import AutoCompleteSuggestions from "./AutoCompleteSuggestions"
 import AutoCompleteSearchLimit from "./AutoCompleteLimit"
 import Prism from "prismjs"
 import "prismjs/components/prism-jsx.min"
+
 class AutoComplete extends React.Component {
   componentDidMount() {
     Prism.highlightAll()
