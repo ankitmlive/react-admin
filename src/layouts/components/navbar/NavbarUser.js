@@ -12,13 +12,13 @@ import {
 } from "reactstrap"
 import PerfectScrollbar from "react-perfect-scrollbar"
 import axios from "axios"
-import * as Icon from "react-feather"
 import classnames from "classnames"
-import ReactCountryFlag from "react-country-flag"
-import Autocomplete from "../../../components/@vuexy/autoComplete/AutoCompleteComponent"
-//import { useAuth0 } from "../../../authServices/auth0/auth0Service"
+import * as Icon from "react-feather"
 import { history } from "../../../history"
+import ReactCountryFlag from "react-country-flag"
 import { IntlContext } from "../../../utility/Internationalization"
+//import Autocomplete from "../../../components/@vuexy/autoComplete/AutoCompleteComponent"
+//import { useAuth0 } from "../../../authServices/auth0/auth0Service"
 
 const handleNavigation = (e, path) => {
   e.preventDefault()
@@ -184,7 +184,6 @@ class NavbarUser extends React.PureComponent {
 
   removeItem = id => {
     let cart = this.state.shoppingCart
-
     let updatedCart = cart.filter(i => i.id !== id)
 
     this.setState({
@@ -322,7 +321,7 @@ class NavbarUser extends React.PureComponent {
             <div className="search-input-icon">
               <Icon.Search size={17} className="primary" />
             </div>
-            <Autocomplete
+            {/* <Autocomplete
               className="form-control"
               suggestions={this.state.suggestions}
               filterKey="title"
@@ -420,7 +419,7 @@ class NavbarUser extends React.PureComponent {
                   this.props.handleAppOverlay(userInput)
                 }
               }}
-            />
+            /> */}
             <div className="search-input-close">
               <Icon.X
                 size={24}

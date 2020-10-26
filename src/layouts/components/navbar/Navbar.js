@@ -8,7 +8,7 @@ import classnames from "classnames"
 //   logoutWithFirebase
 // } from "../../../redux/actions/auth/loginActions"
 
-import NavbarBookmarks from "./NavbarBookmarks"
+//import NavbarBookmarks from "./NavbarBookmarks"
 import NavbarUser from "./NavbarUser"
 import userImg from "../../../assets/img/portrait/small/avatar-s-11.jpg"
 
@@ -75,10 +75,10 @@ const ThemeNavbar = props => {
               id="navbar-mobile"
             >
               <div className="bookmark-wrapper">
-                <NavbarBookmarks
+                {/* <NavbarBookmarks
                   sidebarVisibility={props.sidebarVisibility}
                   handleAppOverlay={props.handleAppOverlay}
-                />
+                /> */}
               </div>
               {props.horizontal ? (
                 <div className="logo d-flex align-items-center">
