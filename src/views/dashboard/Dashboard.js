@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Row className="match-height">
+        <Row>
           <Col sm="12">
             <DomainLists />
           </Col>
