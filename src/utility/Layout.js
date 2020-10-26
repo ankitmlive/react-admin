@@ -77,8 +77,6 @@ class Layout extends React.Component {
     else document.getElementsByTagName("html")[0].setAttribute("dir", "ltr")
   }
 
-
-
   render() {
     const { children } = this.props
     return (
