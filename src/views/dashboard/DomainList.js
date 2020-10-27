@@ -12,6 +12,7 @@ import avatar7 from "../../assets/img/portrait/small/avatar-s-3.jpg"
 import avatar8 from "../../assets/img/portrait/small/avatar-s-4.jpg"
 
 class DomainLists extends React.Component {
+
   state = {
     domainLists: [],
     isLoading: true,
@@ -21,7 +22,8 @@ class DomainLists extends React.Component {
   // Now we're going to make a request for data using axios
   getDomain() {
     axios
-      .get("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/posts.json")
+      //.get("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/posts.json")
+      .get("https://cp.georadius.in/console_result.php?action=consolidated_vehicle_count&date_from=2020-10-27&date_to=2020-10-27&rand=160781184")
       // Once we get a response and store data, let's change the loading state
       .then(response => {
         this.setState({
@@ -39,6 +41,7 @@ class DomainLists extends React.Component {
 
   render() {
     const { isLoading, domainLists } = this.state;
+    const elements = [{"instance_id":"6533","domain_name":"ais140.adititracking.com","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6536","domain_name":"ais.georadius.in","active_vehicle_count":"0","billing_active_count":"67","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6531","domain_name":"aistest.georadius.in","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6544","domain_name":"amvtrack.com","active_vehicle_count":"0","billing_active_count":"2","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6542","domain_name":"balajigps.com","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6562","domain_name":"beta.georadius.in","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6561","domain_name":"beta.gpsplatform.in","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6540","domain_name":"dakshgps.in","active_vehicle_count":"0","billing_active_count":"143","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6550","domain_name":"dashmeshsmartgps.com","active_vehicle_count":"0","billing_active_count":"11","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6564","domain_name":"doordrishti.co","active_vehicle_count":"0","billing_active_count":"290","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6534","domain_name":"eeragpsserver.com","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6557","domain_name":"gabriel.georadius.in","active_vehicle_count":"0","billing_active_count":"11","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6560","domain_name":"lite.traqr.com","active_vehicle_count":"0","billing_active_count":"9","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6539","domain_name":"myscada.online","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6535","domain_name":"phoneixweb.com","active_vehicle_count":"0","billing_active_count":"34","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6548","domain_name":"plus.livetrace.live","active_vehicle_count":"0","billing_active_count":"26","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6541","domain_name":"roadlinksecuritysystem.com","active_vehicle_count":"0","billing_active_count":"450","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6555","domain_name":"securewheels.co.in","active_vehicle_count":"0","billing_active_count":"83","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6528","domain_name":"syntrack.co.in","active_vehicle_count":"0","billing_active_count":"34","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6532","domain_name":"track.gpstricity.in","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6554","domain_name":"track.grapes.net.in","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6558","domain_name":"trackingmandu.com","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6538","domain_name":"tracking.trackinindia.in","active_vehicle_count":"0","billing_active_count":"58","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6527","domain_name":"tracknovate.co.in","active_vehicle_count":"0","billing_active_count":"0","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6563","domain_name":"track.sikkaenterprises.com","active_vehicle_count":"0","billing_active_count":"12","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6559","domain_name":"track.streettracking.com","active_vehicle_count":"0","billing_active_count":"44","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6547","domain_name":"track.thukralelectricbikes.com","active_vehicle_count":"0","billing_active_count":"149","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6549","domain_name":"wgtracking.in","active_vehicle_count":"0","billing_active_count":"1","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"},{"instance_id":"6556","domain_name":"www.gps.oodak.com","active_vehicle_count":"0","billing_active_count":"5","total_count":"0","task_employee_count":"0","roster_employee_count":"0","total_dispatch":"0","status":"0"}];
     return (
       <Card>
         <CardHeader>
@@ -62,282 +65,19 @@ class DomainLists extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>#879985</td>
-              <td>
-                <div
-                  className="bg-success"
-                  style={{
-                    height: "10px",
-                    width: "10px",
-                    borderRadius: "50%",
-                    display: "inline-block",
-                    marginRight: "5px"
-                  }}
-                />
-                <span>Moving</span>
-              </td>
-              <td className="p-1">
-                <ul className="list-unstyled users-list m-0 d-flex">
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar1}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar1"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar1">
-                      Vinnie Mostowy
-                    </UncontrolledTooltip>
-                  </li>
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar2}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar2"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar2">
-                      Elicia Rieske
-                    </UncontrolledTooltip>
-                  </li>
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar3}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar3"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar3">
-                      Julee Rossignol
-                    </UncontrolledTooltip>
-                  </li>
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar4}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar4"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar4">
-                      Darcey Nooner
-                    </UncontrolledTooltip>
-                  </li>
-                </ul>
-              </td>
-              <td>Anniston, Alabama</td>
-              <td>
-                <span>130 km</span>
-                <Progress className="mb-0 mt-1" color="success" value="80" />
-              </td>
-              <td>14:58 26/07/2018</td>
-              <td>28/07/2018</td>
-            </tr>
-            <tr>
-              <td>#156897</td>
-              <td>
-                <div
-                  className="bg-warning"
-                  style={{
-                    height: "10px",
-                    width: "10px",
-                    borderRadius: "50%",
-                    display: "inline-block",
-                    marginRight: "5px"
-                  }}
-                />
-                <span>Pending</span>
-              </td>
-              <td className="p-1">
-                <ul className="list-unstyled users-list m-0 d-flex">
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar5}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar5"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar5">
-                      Trina Lynes
-                    </UncontrolledTooltip>
-                  </li>
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar6}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar6"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar6">
-                      Lilian Nenez
-                    </UncontrolledTooltip>
-                  </li>
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar7}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar7"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar7">
-                      Alberto Glotzbach
-                    </UncontrolledTooltip>
-                  </li>
-                </ul>
-              </td>
-              <td>Cordova, Alaska </td>
-              <td>
-                <span>234 km</span>
-                <Progress className="mb-0 mt-1" color="warning" value="60" />
-              </td>
-              <td>14:58 26/07/2018 </td>
-              <td>28/07/2018</td>
-            </tr>
-            <tr>
-              <td>#568975</td>
-              <td>
-                <div
-                  className="bg-success"
-                  style={{
-                    height: "10px",
-                    width: "10px",
-                    borderRadius: "50%",
-                    display: "inline-block",
-                    marginRight: "5px"
-                  }}
-                />
-                <span>Moving</span>
-              </td>
-              <td className="p-1">
-                <ul className="list-unstyled users-list m-0 d-flex">
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar8}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar8"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar8">
-                      Lai Lewandowski
-                    </UncontrolledTooltip>
-                  </li>
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar1}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar12"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar12">
-                      Elicia Rieske
-                    </UncontrolledTooltip>
-                  </li>
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar2}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar9"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar9">
-                      Darcey Nooner
-                    </UncontrolledTooltip>
-                  </li>
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar3}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar10"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar10">
-                      Darcey Nooner
-                    </UncontrolledTooltip>
-                  </li>
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar4}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar11"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar11">
-                      Darcey Nooner
-                    </UncontrolledTooltip>
-                  </li>
-                </ul>
-              </td>
-              <td>Florence, Alabama </td>
-              <td>
-                <span>168 km</span>
-                <Progress className="mb-0 mt-1" color="success" value="70" />
-              </td>
-              <td>14:58 26/07/2018 </td>
-              <td>28/07/2018</td>
-            </tr>
-            <tr>
-              <td>#245689</td>
-              <td>
-                <div
-                  className="bg-danger"
-                  style={{
-                    height: "10px",
-                    width: "10px",
-                    borderRadius: "50%",
-                    display: "inline-block",
-                    marginRight: "5px"
-                  }}
-                />
-                <span>Canceled</span>
-              </td>
-              <td className="p-1">
-                <ul className="list-unstyled users-list m-0 d-flex">
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar1}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar13"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar13">
-                      Lai Lewandowski
-                    </UncontrolledTooltip>
-                  </li>
-                  <li className="avatar pull-up">
-                    <img
-                      src={avatar2}
-                      alt="avatar"
-                      height="30"
-                      width="30"
-                      id="avatar14"
-                    />
-                    <UncontrolledTooltip placement="bottom" target="avatar14">
-                      Elicia Rieske
-                    </UncontrolledTooltip>
-                  </li>
-                </ul>
-              </td>
-              <td>Clifton, Arizona </td>
-              <td>
-                <span>125 km</span>
-                <Progress className="mb-0 mt-1" color="danger" value="90" />
-              </td>
-              <td>14:58 26/07/2018 </td>
-              <td>28/07/2018</td>
-            </tr>
+            {elements.map((value, index) => {
+                return <tr>
+                          <td key={index}>{value.domain_name}</td>
+                          <td key={index}>{value.instance_id}</td>
+                          <td key={index}>{value.active_vehicle_count}</td>
+                          <td key={index}>{value.billing_active_count}</td>
+                          <td key={index}>{value.total_count}</td>
+                          <td key={index}>{value.task_employee_count}</td>
+                          <td key={index}>{value.roster_employee_count}</td>
+                          <td key={index}>{value.total_dispatch}</td>
+                          <td key={index}>{value.status}</td>
+                        </tr>
+            })}
           </tbody>
         </Table>
       </Card>
