@@ -1,5 +1,5 @@
 // Main theme config file for CP
-// -- Created by Ankit
+// -- Created by Ankit Mishra
 
 const themeConfig = {
     layout: "vertical", // options[String]: "vertical"(default), "horizontal"
