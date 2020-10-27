@@ -66,17 +66,19 @@ class DomainLists extends React.Component {
           </thead>
           <tbody>
             {elements.map((value, index) => {
-                return <tr>
-                          <td key={index}>{value.domain_name}</td>
-                          <td key={index}>{value.instance_id}</td>
-                          <td key={index}>{value.active_vehicle_count}</td>
-                          <td key={index}>{value.billing_active_count}</td>
-                          <td key={index}>{value.total_count}</td>
-                          <td key={index}>{value.task_employee_count}</td>
-                          <td key={index}>{value.roster_employee_count}</td>
-                          <td key={index}>{value.total_dispatch}</td>
-                          <td key={index}>{value.status}</td>
-                        </tr>
+              return (
+                    <tr>
+                     <td key={index}>{value.domain_name}</td>
+                      <td key={index}>{value.instance_id}</td>
+                      <td key={index}>{value.active_vehicle_count}</td>
+                      <td key={index}>{value.billing_active_count}</td>
+                      <td key={index}>{value.total_count}</td>
+                      <td key={index}>{value.task_employee_count}</td>
+                      <td key={index}>{value.roster_employee_count}</td>
+                      <td key={index}>{value.total_dispatch}</td>
+                      <td key={index}>{value.status}</td>
+                    </tr>
+                )
             })}
           </tbody>
         </Table>
