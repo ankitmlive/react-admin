@@ -6,8 +6,8 @@ import { ContextLayout } from "../utility/Layout"
 import Spinner from "../components/@vuexy/spinner/Loading-spinner"
 
 // import all components
-//const register = lazy(() => import("../views/pages/auth/register/Register"))
-const Login = lazy(() => import("../views/pages/auth/login/Login"))
+const register = lazy(() => import("../views/auth/register/Register"))
+const Login = lazy(() => import("../views/auth/login/Login"))
 const Dashboard = lazy(() =>import("../views/dashboard/Dashboard"))
 
 // Set Layout and Component Using App Route
@@ -52,7 +52,7 @@ class AppRouter extends React.Component {
                 <Switch>
                     <AppRoute exact path="/dash" component={Dashboard} />
                     <AppRoute path="/login" component={Login} fullLayout />
-                    {/* <AppRoute path="/register" component={register} fullLayout /> */}
+                    <AppRoute path="/register" component={register} fullLayout />
                 </Switch>
             </Router>
         )
