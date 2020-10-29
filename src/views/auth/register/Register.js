@@ -16,7 +16,7 @@ import classnames from "classnames"
 //import RegisterFirebase from "./RegisterFirebase"
 import RegisterAPI from "./RegisterAPI"
 //import RegisterAuth0 from "./RegisterAuth0"
-//import RegisterJWT from "./RegisterJWT"
+import RegisterJWT from "./RegisterJWT"
 import registerImg from "../../../assets/img/pages/register.jpg"
 import "../../../assets/scss/pages/authentication.scss"
 
@@ -100,7 +100,7 @@ class Register extends React.Component {
                   <CardBody className="pt-1 pb-50">
                     <TabContent activeTab={this.state.activeTab}>
                       <TabPane tabId="1">
-                        {/* <RegisterJWT /> */}
+                        <RegisterJWT />
                       </TabPane>
                       <TabPane tabId="2">
                         {/* <RegisterFirebase /> */}
