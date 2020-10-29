@@ -4,6 +4,7 @@ import Checkbox from "../../../components/@vuexy/checkbox/CheckboxesVuexy"
 import { Check } from "react-feather"
 import { connect } from "react-redux"
 //import { signupWithFirebase } from "../../../redux/actions/auth/registerActions"
+import { signupWithAPI } from "../../../redux/actions/auth/registerActions"
 import { history } from "../../../history"
 
 class RegisterAPI extends React.Component {
@@ -16,11 +17,11 @@ class RegisterAPI extends React.Component {
 
   handleRegister = e => {
     e.preventDefault()
-    // this.props.signupWithFirebase(
-    //   this.state.email,
-    //   this.state.password,
-    //   this.state.name
-    // )
+    this.props.signupWithAPI(
+      this.state.email,
+      this.state.password,
+      this.state.name
+    )
   }
 
   render() {
