@@ -24,6 +24,14 @@ class RegisterAPI extends React.Component {
     )
   }
 
+  // confirmPassword = e => {
+  //   if (e !== this.state.password) {
+  //     console.log("password doesnt match")
+  //   }else{
+  //     this.setState({ confirmPass: e })
+  //   }
+  // }
+
   render() {
     return (
       <Form onSubmit={this.handleRegister}>
@@ -64,6 +72,7 @@ class RegisterAPI extends React.Component {
             required
             value={this.state.confirmPass}
             onChange={e => this.setState({ confirmPass: e.target.value })}
+            //onChange={e => this.confirmPassword(e.target.value)}
           />
           <Label>Confirm Password</Label>
         </FormGroup>
@@ -77,7 +86,7 @@ class RegisterAPI extends React.Component {
         </FormGroup>
         <div className="d-flex justify-content-between">
           <Button.Ripple
-            onClick={() => history.push("/pages/login")}
+            onClick={() => history.push("/login")}
             color="primary"
             outline
           >
@@ -96,6 +105,4 @@ const mapStateToProps = state => {
     values: state.auth.register
   }
 }
-export default connect(mapStateToProps)(
-  RegisterAPI
-)
+export default connect(mapStateToProps, { signupWithAPI })(RegisterAPI)

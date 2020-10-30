@@ -54,7 +54,7 @@ import axios from "axios"
 //   }
 // }
 
-export const signupWithJWT = (email, password, name) => {
+export const signupWithAPI = (email, password, name) => {
   return dispatch => {
     axios
       .post("/api/authenticate/register/user", {
