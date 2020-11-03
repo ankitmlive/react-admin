@@ -9,6 +9,7 @@ import Spinner from "../components/@vuexy/spinner/Loading-spinner"
 const register = lazy(() => import("../views/auth/register/Register"))
 const Login = lazy(() => import("../views/auth/login/Login"))
 const Dashboard = lazy(() =>import("../views/dashboard/Dashboard"))
+const Cluster = lazy(() =>import("../views/apps/Cluster"))
 
 // Set Layout and Component Using App Route
 const RouteConfig = ({ component: Component, fullLayout, ...rest }) => (
@@ -51,6 +52,7 @@ class AppRouter extends React.Component {
             <Router history={history}>
                 <Switch>
                     <AppRoute exact path="/dash" component={Dashboard} />
+                    <AppRoute exact path="/cluster" component={Cluster} />
                     <AppRoute path="/login" component={Login} fullLayout />
                     <AppRoute path="/register" component={register} fullLayout />
                 </Switch>
