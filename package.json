@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^7.2.1",
     "apexcharts": "^3.22.0",
     "axios": "^0.20.0",
-    "axios-mock-adapter": "^1.18.2",
     "bootstrap": "^4.5.3",
     "classnames": "^2.2.6",
     "fibers": "^5.0.0",
