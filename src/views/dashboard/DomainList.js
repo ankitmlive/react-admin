@@ -1,15 +1,6 @@
 import React from "react"
 import axios from "axios"
-import {Card, CardHeader, CardTitle, Table, UncontrolledTooltip, Progress} from "reactstrap"
-
-import avatar1 from "../../assets/img/portrait/small/avatar-s-5.jpg"
-import avatar2 from "../../assets/img/portrait/small/avatar-s-7.jpg"
-import avatar3 from "../../assets/img/portrait/small/avatar-s-10.jpg"
-import avatar4 from "../../assets/img/portrait/small/avatar-s-8.jpg"
-import avatar5 from "../../assets/img/portrait/small/avatar-s-1.jpg"
-import avatar6 from "../../assets/img/portrait/small/avatar-s-2.jpg"
-import avatar7 from "../../assets/img/portrait/small/avatar-s-3.jpg"
-import avatar8 from "../../assets/img/portrait/small/avatar-s-4.jpg"
+import {Card, CardHeader, CardTitle, Table} from "reactstrap"
 
 class DomainLists extends React.Component {
 
