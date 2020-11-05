@@ -1,7 +1,6 @@
 import React from "react"
 import {Card, CardHeader, CardTitle, Table} from "reactstrap"
-//import axios from "axios"
-const axios = require('axios');
+import axios from "axios"
 
 class Cluster extends React.Component {
 
@@ -11,28 +10,20 @@ class Cluster extends React.Component {
     errors: null
   };
 
-  async getCluster() {
-  const result = await axios.get(
-    "https://api.coindesk.com/v1/bpi/currentprice.json"
-  );
-  console.log(result)
-  }
-
   // Now we're going to make a request for data using axios
-  // getCluster() {
-  //   axios
-  //     .get("https://cp.georadius.in/console_result.php?&action=search_cluster&cluster_name=&cluster_location=&rand=539798834")
-  //     // Once we get a response and store data, let's change the loading state
-  //     .then(response => {
-  //       console.log(response)
-  //       this.setState({
-  //         clusterLists: response.data.posts,
-  //         isLoading: false
-  //       });
-  //     })
-  //     // If we catch any errors connecting, let's update accordingly
-  //     .catch(error => this.setState({ error, isLoading: false }));
-  // }
+  getCluster() {
+    axios
+      .get("https://cp.georadius.in/console_result.php?&action=search_cluster&cluster_name=&cluster_location=&rand=539798834")
+      // Once we get a response and store data, let's change the loading state
+      .then(response => {
+        this.setState({
+          clusterLists: response.data.data,
+          isLoading: false
+        });
+      })
+      // If we catch any errors connecting, let's update accordingly
+      .catch(error => this.setState({ error, isLoading: false }));
+  }
 
   componentDidMount() {
     this.getCluster();
@@ -40,6 +31,7 @@ class Cluster extends React.Component {
 
   render() {
     const { isLoading, clusterLists } = this.state;
+    console.log(clusterLists);
     return (
       <Card>
         <CardHeader>
@@ -60,11 +52,11 @@ class Cluster extends React.Component {
           <tbody>
             {clusterLists.map((value, index) => {
               return (
-                    <tr>
-                      <td key={index}>{value.domain_name}</td>
-                      <td key={index}>{value.instance_id}</td>
-                      <td key={index}>{value.active_vehicle_count}</td>
-                      <td key={index}>{value.active_vehicle_count}</td>
+                    <tr key={index}>
+                      <td>{value.cluster_id}</td>
+                      <td>{value.cluster_name}</td>
+                      <td>{value.cluster_location}</td>
+                      <td>{value.status}</td>
                     </tr>
                 )
             })}
