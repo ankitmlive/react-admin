@@ -13,7 +13,7 @@ class Invoice extends React.Component {
   // Now we're going to make a request for data using axios
   getInvoices() {
     axios
-      .get("https://cp.georadius.in/console_result.php?&action=search_cluster&cluster_name=&cluster_location=&rand=539798834")
+      .get("https://cp.georadius.in/console_result.php?action=invoice_search&invoice_code=&user_id=&start_date=2020-11-06%2000:00:00&end_date=2020-11-06%2023:59:59&invoice_status=0&rand=1250672774")
       // Once we get a response and store data, let's change the loading state
       .then(response => {
         this.setState({
@@ -35,7 +35,7 @@ class Invoice extends React.Component {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Cluster</CardTitle>
+          <CardTitle>Invoices</CardTitle>
         </CardHeader>
         <Table
           responsive
@@ -43,20 +43,28 @@ class Invoice extends React.Component {
         >
           <thead>
             <tr>
-              <th>Cluster Name</th>
-              <th>Cluster Location</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Invoice ID</th>
+              <th>Email</th>
+              <th>User</th>
+              <th>Company</th>
+              <th>Address</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Date</th>
             </tr>
           </thead>
           <tbody>
             {InvoiceLists.map((value, index) => {
               return (
                     <tr key={index}>
-                      <td>{value.cluster_id}</td>
-                      <td>{value.cluster_name}</td>
-                      <td>{value.cluster_location}</td>
-                      <td>{value.status}</td>
+                      <td>{value.invoice_id}</td>
+                      <td>{value.email_id}</td>
+                      <td>{value.user_name}</td>
+                      <td>{value.company_name}</td>
+                      <td>{value.address}</td>
+                      <td>{value.note}</td>
+                      <td>{value.total_amount}</td>
+                      <td>{value.statement_date}</td>
                     </tr>
                 )
             })}
