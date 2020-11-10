@@ -4,7 +4,7 @@ import Breadcrumbs from "../../components/@vuexy/breadCrumbs/BreadCrumb"
 import ListViewConfig from "./datalist"
 import queryString from "query-string"
 
-class ListView extends React.Component {
+class Invoices extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -23,4 +23,4 @@ class ListView extends React.Component {
   }
 }
 
-export default ListView
+export default Invoices
