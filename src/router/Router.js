@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import { history } from "../history"
 import { ContextLayout } from "../utility/Layout"
 import Spinner from "../components/@vuexy/spinner/Loading-spinner"
+
 import Invoice from "../views/billing/invoices"
 
 // import all components
