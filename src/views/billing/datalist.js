@@ -406,7 +406,7 @@ class DataListConfig extends Component {
                   ? parseInt(this.props.parsedFilter.page - 1)
                   : 0
               }
-              onPageChange={page => this.handlePagination(page)}
+              onPageChange={page => this.handlePagination(page)} 
             />
           )}
           noHeader
