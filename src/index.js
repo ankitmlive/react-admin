@@ -1,3 +1,4 @@
+// Main index file for app
 import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from "react-redux"
