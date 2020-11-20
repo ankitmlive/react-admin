@@ -5,6 +5,7 @@ import { history } from "../history"
 import { ContextLayout } from "../utility/Layout"
 import Spinner from "../components/@vuexy/spinner/Loading-spinner"
 
+// move it to lazy section
 import Invoice from "../views/billing/invoices"
 
 // import all components
