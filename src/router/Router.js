@@ -62,6 +62,7 @@ class AppRouter extends React.Component {
                     <AppRoute exact path="/dash" component={Dashboard} />
                     <AppRoute exact path="/cluster" component={Cluster} />
                     <AppRoute exact path="/invoices" component={Invoice} />
+                    <AppRoute exact path="/invoices/:id" component={Invoice} />
                 </Switch>
             </Router>
         )
