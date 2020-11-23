@@ -67,7 +67,7 @@ const navigationConfig = [
         type: "item",
         icon: <Icon.Circle size={12} />,
         permissions: ["admin", "editor"],
-        navLink: "/"
+        navLink: "/invoices"
       },
       {
         id: "invoicecount",
@@ -75,7 +75,7 @@ const navigationConfig = [
         type: "item",
         icon: <Icon.Circle size={12} />,
         permissions: ["admin"],
-        navLink: "/ecommerce-dashboard"
+        navLink: "/invoices/:id"
       }
     ]
   },
