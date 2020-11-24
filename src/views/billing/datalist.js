@@ -1,38 +1,14 @@
 import React, { Component } from "react"
-import {
-  Button,
-  Progress,
-  UncontrolledDropdown,
-  DropdownMenu,
-  DropdownToggle,
-  DropdownItem,
-  Input
-} from "reactstrap"
+import { Button, Progress, UncontrolledDropdown, DropdownMenu, DropdownToggle, DropdownItem, Input } from "reactstrap" 
 import DataTable from "react-data-table-component"
 import classnames from "classnames"
 import ReactPaginate from "react-paginate"
 import { history } from "../../history"
-import {
-  Edit,
-  Trash,
-  ChevronDown,
-  Plus,
-  Check,
-  ChevronLeft,
-  ChevronRight
-} from "react-feather"
+import { Edit, Trash, ChevronDown, Plus, Check, ChevronLeft, ChevronRight } from "react-feather" 
 import { connect } from "react-redux"
+import { getData, getInitialData, deleteData, updateData, addData, filterData } from "../../redux/actions/billing/"
 
-import {
-  getData,
-  getInitialData,
-  deleteData,
-  updateData,
-  addData,
-  filterData
-} from "../../redux/actions/billing/"
-
-//import Sidebar from "./DataListSidebar"
+import Sidebar from "./DataListSidebar"
 
 import Chip from "../../components/@vuexy/chips/ChipComponent"
 import Checkbox from "../../components/@vuexy/checkbox/CheckboxesVuexy"
@@ -438,7 +414,7 @@ class DataListConfig extends Component {
             size: "sm"
           }}
         />
-        {/* <Sidebar
+        <Sidebar
           show={sidebar}
           data={currentData}
           updateData={this.props.updateData}
@@ -448,7 +424,7 @@ class DataListConfig extends Component {
           getData={this.props.getData}
           dataParams={this.props.parsedFilter}
           addNew={this.state.addNew}
-        /> */}
+        />
         <div
           className={classnames("data-list-overlay", {
             show: sidebar

@@ -9,9 +9,9 @@ class Invoices extends React.Component {
     return (
       <React.Fragment>
         <Breadcrumbs
-          breadCrumbTitle="List View"
-          breadCrumbParent="Data List"
-          breadCrumbActive="List View"
+          breadCrumbTitle="Invoices"
+          breadCrumbParent="Billing"
+          breadCrumbActive="Invoices"
         />
         <Row>
           <Col sm="12">
