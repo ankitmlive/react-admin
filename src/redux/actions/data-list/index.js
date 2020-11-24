@@ -21,6 +21,14 @@ export const getInitialData = () => {
   }
 }
 
+export const getAllInvoices = () => {
+  return async dispatch => {
+    await axios.get("https://jsonplaceholder.typicode.com/users").then(response => {
+      dispatch({ type: "GET_ALL_INVOICES", data: response.data})
+    })
+  }
+}
+
 export const filterData = value => {
   return dispatch => dispatch({ type: "FILTER_DATA", value })
 }
