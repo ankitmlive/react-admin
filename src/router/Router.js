@@ -18,6 +18,7 @@ const Login = lazy(() => import("../views/auth/login/Login"))
 
 //const InvoiceInfo = lazy(() => import("../views/billing/invoiceinfo"));
 
+const Invoices = lazy(() => import("../views/billing/invoices"))
 const listView = lazy(() => import("../views/data-list/ListView"))
 
 // Set Layout and Component Using App Route
@@ -67,10 +68,10 @@ class AppRouter extends React.Component {
                     {/* <AppRoute exact path="/dash" component={Dashboard} />
                     <AppRoute exact path="/cluster" component={Cluster} /> */}
 
-                    {/* <AppRoute exact path="/invoices" component={Invoice} />
-                    <AppRoute exact path="/invoices/:id" component={InvoiceInfo} /> */}
+                    {/*<AppRoute exact path="/invoices/:id" component={InvoiceInfo} /> */}
 
                     <AppRoute path="/list" component={listView} />
+                    <AppRoute exact path="/invoices" component={Invoices} />
                 </Switch>
             </Router>
         )
