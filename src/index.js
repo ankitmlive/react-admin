@@ -9,6 +9,7 @@ import { Layout } from "./utility/Layout"
 import { IntlProviderWrapper } from "./utility/Internationalization"
 
 import "./index.scss"
+import "./@fake-db"
 
 const LazyApp = lazy(() => import("./App"))
 
