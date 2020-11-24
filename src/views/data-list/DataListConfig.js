@@ -6,7 +6,7 @@ import ReactPaginate from "react-paginate"
 import { history } from "../../history"
 import { Edit, Trash, ChevronDown, Plus, Check, ChevronLeft, ChevronRight } from "react-feather"
 import { connect } from "react-redux"
-import { getData, getInitialData, deleteData, updateData, addData, filterData } from "../../redux/actions/data-list/"
+import { getData, getInitialData, getAllInvoices, deleteData, updateData, addData, filterData } from "../../redux/actions/data-list/"
 import Sidebar from "./DataListSidebar"
 import Chip from "../../components/@vuexy/chips/ChipComponent"
 import Checkbox from "../../components/@vuexy/checkbox/CheckboxesVuexy"
@@ -212,7 +212,8 @@ class DataListConfig extends Component {
 
   componentDidMount() {
     this.props.getData(this.props.parsedFilter)
-    this.props.getInitialData()
+    this.props.getInitialData() 
+    //this.props.getAllInvoices()
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -447,5 +448,6 @@ export default connect(mapStateToProps, {
   updateData,
   addData,
   getInitialData,
+  getAllInvoices,
   filterData
 })(DataListConfig)
