@@ -56,6 +56,13 @@ const DataListReducer = (state = initialState, action) => {
         totalRecords: action.data.length,
         sortIndex: getIndex(action.data, state.data, state.sortIndex)
       }
+    case "GET_ALL_INVOICES":
+      return {
+        ...state,
+        allData: action.data,
+        totalRecords: action.data.length,
+        sortIndex: getIndex(action.data, state.data, state.sortIndex)
+      }
     case "FILTER_DATA":
       let value = action.value
       let filteredData = []
