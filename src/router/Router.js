@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react"
 import { Router, Switch, Route } from "react-router-dom"
 import { connect } from "react-redux"
 import { history } from "../history"
+//import { Redirect } from "react-router-dom"
 import { ContextLayout } from "../utility/Layout"
 import Spinner from "../components/@vuexy/spinner/Loading-spinner"
 
