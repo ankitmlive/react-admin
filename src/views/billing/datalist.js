@@ -82,7 +82,7 @@ const CustomHeader = props => {
           <span className="align-middle">Add New</span>
         </Button> */}
       </div>
-      
+
       <div className="actions-right d-flex flex-wrap mt-sm-0 mt-2">
         <UncontrolledDropdown className="data-list-rows-dropdown mr-1 d-md-block d-none">
           <DropdownToggle color="" className="sort-dropdown">
@@ -107,7 +107,7 @@ const CustomHeader = props => {
           </DropdownMenu>
         </UncontrolledDropdown>
         <div className="filter-section">
-          <Input type="text" onChange={e => props.handleFilter(e)} />
+          <Input type="text" placeholder="Search List" onChange={e => props.handleFilter(e)} />
         </div>
       </div>
     </div>
