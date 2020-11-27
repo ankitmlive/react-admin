@@ -72,15 +72,17 @@ const CustomHeader = props => {
             <DropdownItem tag="a">Export</DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown>
-        <Button
+
+        {/* <Button
           className="add-new-btn"
           color="primary"
           onClick={() => props.handleSidebar(true, true)}
           outline>
           <Plus size={15} />
           <span className="align-middle">Add New</span>
-        </Button>
+        </Button> */}
       </div>
+      
       <div className="actions-right d-flex flex-wrap mt-sm-0 mt-2">
         <UncontrolledDropdown className="data-list-rows-dropdown mr-1 d-md-block d-none">
           <DropdownToggle color="" className="sort-dropdown">
@@ -303,10 +305,10 @@ class DataListConfig extends Component {
     getData({ page: parsedFilter.page, perPage: value })
   }
 
-  handleSidebar = (boolean, addNew = false) => {
-    this.setState({ sidebar: boolean })
-    if (addNew === true) this.setState({ currentData: null, addNew: true })
-  }
+  // handleSidebar = (boolean, addNew = false) => {
+  //   this.setState({ sidebar: boolean })
+  //   if (addNew === true) this.setState({ currentData: null, addNew: true })
+  // }
 
   handleDelete = row => {
     this.props.deleteData(row)
