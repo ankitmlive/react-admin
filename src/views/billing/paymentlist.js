@@ -114,7 +114,7 @@ const CustomHeader = props => {
   )
 }
 
-class DataListConfig extends Component {
+class PaymentViewConfig extends Component {
   static getDerivedStateFromProps(props, state) {
     if (
       props.dataList.data.length !== state.data.length ||
@@ -141,8 +141,8 @@ class DataListConfig extends Component {
     currentPage: 0,
     columns: [
       {
-        name: "Name",
-        selector: "name",
+        name: "User Name",
+        selector: "username",
         sortable: true,
         minWidth: "300px",
         cell: row => (
@@ -152,7 +152,7 @@ class DataListConfig extends Component {
         )
       },
       {
-        name: "Category",
+        name: "Amount",
         selector: "category",
         sortable: true
       },
@@ -305,10 +305,10 @@ class DataListConfig extends Component {
     getData({ page: parsedFilter.page, perPage: value })
   }
 
-  // handleSidebar = (boolean, addNew = false) => {
-  //   this.setState({ sidebar: boolean })
-  //   if (addNew === true) this.setState({ currentData: null, addNew: true })
-  // }
+  handleSidebar = (boolean, addNew = false) => {
+    this.setState({ sidebar: boolean })
+    if (addNew === true) this.setState({ currentData: null, addNew: true })
+  }
 
   handleDelete = row => {
     this.props.deleteData(row)
@@ -360,6 +360,7 @@ class DataListConfig extends Component {
       totalRecords,
       sortIndex
     } = this.state
+
     return (
       <div
         className={`data-list ${
@@ -451,4 +452,4 @@ export default connect(mapStateToProps, {
   addData,
   getInitialData,
   filterData
-})(DataListConfig)
+})(PaymentViewConfig)
